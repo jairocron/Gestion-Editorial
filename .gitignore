@@ -40,5 +40,5 @@ yarn.lock
 # otros
 mcp_server.py
 
-docs/ARCHIVOS_A_ELIMINAR.md
+.ARCHIVOS_A_ELIMINAR.md
 

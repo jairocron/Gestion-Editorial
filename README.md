@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Gesti-n-Editorial
 Proyecto de plataforma de gestión editorial 
 =======

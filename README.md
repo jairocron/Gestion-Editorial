@@ -252,8 +252,3 @@ Este proyecto está bajo la Licencia MIT. Ver archivo `LICENSE` para más detall
 - Bootstrap 5 por el framework CSS
 - UI Avatars por la generación de avatares
 - XAMPP por el entorno de desarrollo local
-
----
-
-**Desarrollado con ❤️ para optimizar la gestión editorial**
->>>>>>> 28f485f (inicializando repositorio)

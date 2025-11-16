@@ -37,6 +37,9 @@ desktop.ini
 node_modules/
 package-lock.json
 yarn.lock
+
+# Documentos a ignorar
+docs/ARCHIVOS_A_ELIMINAR.md
 # otros
 mcp_server.py
 

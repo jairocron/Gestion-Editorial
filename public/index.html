@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestión Editorial — Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../shared/assets/css/styles.css">
+    <style>
+        body {
+            background-image: url('../shared/assets/img/background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        .hero {
+            padding: 80px 0;
+            background-color: rgba(var(--bs-body-bg-rgb, 255,255,255), 0.75);
+            backdrop-filter: blur(4px);
+            border: 1px solid var(--bs-border-color);
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span class="logo-accent">GE</span> | Gestión Editorial
+            </a>
+            <div class="ms-auto d-flex gap-2">
+                <a class="btn btn-primary" href="../shared/index.php"><i class="bi bi-box-arrow-in-right"></i> Ingresar</a>
+                <a class="btn btn-secondary" href="../shared/registro_form.php"><i class="bi bi-person-plus"></i> Crear cuenta</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="hero mx-auto p-5">
+            <h1 class="display-5 fw-bold">Bienvenido a Gestión Editorial</h1>
+            <p class="col-lg-8 fs-5 text-body-secondary mt-3">
+                Centraliza, Optimiza y Acelera tu Ciclo de Publicación.
+            </p>
+            <hr class="my-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="../shared/assets/img/procesos agiles.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-lightning-charge text-primary"></i> Procesos Ágiles</h5>
+                            <p class="card-text">Flujos de trabajo claros para asignar, revisar y cerrar tareas editoriales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="../shared/assets/img/colaboracion.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-people text-primary"></i> Colaboración</h5>
+                            <p class="card-text">Trabajo en equipo entre autores, revisores y editores con seguimiento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="../shared/assets/img/metricas.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-graph-up-arrow text-primary"></i> Métricas</h5>
+                            <p class="card-text">Reportes y constancias para evaluar rendimiento y productividad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 text-center text-body-secondary">
+        <small>© <span id="year"></span> Gestión Editorial | Todos los derechos reservados.</small>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+/* ===================================
+   VARIABLES CSS - PALETA DE COLORES
+   =================================== */
+:root {
+    /* Colores de estados de actividades */
+    --estado-asignada: #c1bdb9;
+    --estado-en-desarrollo: #c1bdb9;
+    --estado-finalizada: #c1bdb9;
+    --estado-cerrada: #c1bdb9;
+    
+    /* Colores de estados de tareas */
+    --tarea-abierta: #0d6efd;
+    --tarea-cerrada: #198754;
+    
+    /* Colores principales del sistema */
+    --color-admin: #28a745;
+    --color-empleado: #007bff;
+    --color-primary: #4CAF50;
+    --color-primary-hover: #45a049;
+    --color-danger: #dc3545;
+    --color-warning: #ffc107;
+    --color-info: #17a2b8;
+    
+    /* Fondos */
+    --bg-admin: #e8f0ff;
+    --bg-empleado: #f0f8ff;
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fa;
+    --bg-actividades: #ffffff;  /* Fondo de las actividades - Cambia este valor */
+    
+    /* Sombras */
+    --shadow-light: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-medium: 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-heavy: 0 6px 12px rgba(0,0,0,0.15);
+    
+    /* Bordes */
+    --border-radius: 10px;
+    --border-radius-small: 5px;
+}
+
+/* ===================================
+   BADGES DE ESTADOS - ACTIVIDADES
+   =================================== */
+.badge.badge-asignada,
+span.badge-asignada {
+    background-color: var(--estado-asignada) !important;
+    color: #000 !important;
+    padding: 0.35em 0.65em !important;
+    border-radius: 0.25rem !important;
+    display: inline-block !important;
+    font-weight: 500 !important;
+}
+
+.badge.badge-en-desarrollo,
+span.badge-en-desarrollo {
+    background-color: var(--estado-en-desarrollo) !important;
+    color: #000 !important;
+    padding: 0.35em 0.65em !important;
+    border-radius: 0.25rem !important;
+    display: inline-block !important;
+    font-weight: 500 !important;
+}
+
+.badge.badge-finalizada,
+span.badge-finalizada {
+    background-color: var(--estado-finalizada) !important;
+    color: #000 !important;
+    padding: 0.35em 0.65em !important;
+    border-radius: 0.25rem !important;
+    display: inline-block !important;
+    font-weight: 500 !important;
+}
+
+.badge.badge-cerrada,
+span.badge-cerrada {
+    background-color: var(--estado-cerrada) !important;
+    color: white !important;
+    padding: 0.35em 0.65em !important;
+    border-radius: 0.25rem !important;
+    display: inline-block !important;
+    font-weight: 500 !important;
+}
+
+/* ===================================
+   SECCIONES PRINCIPALES
+   =================================== */
+.seccion-admin {
+    background-color: var(--bg-admin);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--color-admin);
+    box-shadow: var(--shadow-light);
+}
+
+.seccion-empleado {
+    background-color: var(--bg-empleado);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--color-empleado);
+    box-shadow: var(--shadow-light);
+}
+
+#contenido-dinamico {
+    background-color: var(--bg-white);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    min-height: 150px;
+}
+
+/* ===================================
+   BOTONES PERSONALIZADOS
+   =================================== */
+button {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+/* ===================================
+   FILAS DE ACTIVIDADES
+   =================================== */
+ul li.border-bottom {
+    background-color: var(--bg-actividades);
+    padding: 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/* ==============================================
+   ESTILOS PARA CONSTANCIAS - IMPRESION
+   ============================================== */
+.constancia-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.constancia-content {
+    background: white;
+    min-height: 600px;
+}
+
+/* Estilos para impresion */
+@media print {
+  @page { size: A4; margin: 12mm; }
+
+  /* Oculta todo por defecto */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* Solo la constancia y su contenido se ve */
+  .constancia-content, .constancia-content * {
+    visibility: visible !important;
+  }
+
+    /* Reposiciona la constancia al origen de la página impresa
+         y evita la "hoja en blanco" inicial causada por visibility:hidden */
+    .constancia-content {
+        position: absolute !important;
+        top: 0;
+        left: 0; 
+        right: 0;
+        margin: 0 auto;
+        width: 100%;
+        box-shadow: none !important;
+        border: none !important;
+        background: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Centrar tablas y limitar ancho para mejor lectura en A4 */
+    .constancia-content .table,
+    .constancia-content .table-responsive {
+        width: 95% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+  /* Por si tienes botones o barras marcadas como no imprimibles */
+  .no-print { display: none !important; }
+
+  /* Evitar cortes feos entre secciones/tablas */
+  h2, h3, .card, .table {
+    page-break-inside: avoid;
+  }
+}
+
+/* ==============================================
+   PERSONALIZACION DE COLORES BOOTSTRAP
+   ============================================== */
+/* Sobrescribir colores principales de Bootstrap */
+:root {
+    /* Colores primarios del sistema */
+    --bs-primary: #041c30;
+    --bs-primary-rgb: 4, 28, 48;
+    --bs-success: #28a745;
+    --bs-success-rgb: 40, 167, 69;
+    --bs-info: #17a2b8;
+    --bs-info-rgb: 23, 162, 184;
+    --bs-warning: #ffc107;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger: #dc3545;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-secondary: #041c30;
+    --bs-secondary-rgb: 4, 28, 48;
+}
+
+/* Aplicar colores personalizados a botones */
+.btn-primary {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+}
+
+.btn-primary:hover {
+    background-color: #093c66 !important;
+    border-color: #093c66 !important;
+}
+.btn-secondary {
+    background-color: var(--bs-secondary) !important;
+    border-color: var(--bs-secondary) !important;
+}
+
+.btn-secondary:hover {
+    background-color: #093c66 !important;
+    border-color: #093c66 !important;
+}
+/* ==============================================
+   CLASES UTILITARIAS REUTILIZABLES
+   ============================================== */
+
+/* Avatar sizes */
+.avatar-xs {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.avatar-sm {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.avatar-md {
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.avatar-lg {
+    width: 120px !important;
+    height: 120px !important;
+}
+
+/* Logo color personalizado */
+.logo-accent {
+    color: #6f42c1;
+}
+
+/* color de footer */
+footer {
+    background-color: #ffffff;
+    color: rgb(255, 255, 255);
+}

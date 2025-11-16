@@ -1,0 +1,41 @@
+# Archivos y carpetas de desarrollo
+.venv/
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# Archivos de configuración local
+shared/config/conexion.php
+
+# Uploads de usuarios (fotos de perfil)
+uploads/*
+!uploads/.gitkeep
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*~
+
+# Logs del servidor MCP
+mcp_server.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+*.sublime-project
+*.sublime-workspace
+.idea/
+*.iml
+
+# Dependencias de Node (si las usas en el futuro)
+node_modules/
+package-lock.json
+yarn.lock
+# otros
+mcp_server.py

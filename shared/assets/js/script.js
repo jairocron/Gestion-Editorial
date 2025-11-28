@@ -242,8 +242,8 @@ async function mostrarActividadesPorTarea() {
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <span class="badge bg-primary me-2">Tarea ID: ${tareaId}</span>
-                                ${tareaEstado === 'CERRADA' ? '<span class="badge badge-cerrada">🔒 CERRADA</span>' : ''}
-                                ${todasCerradas && tareaEstado !== 'CERRADA' ? '<span class="badge bg-warning text-dark">✅ Lista para cerrar</span>' : ''}
+                                ${tareaEstado === 'CERRADA' ? '<span class="badge badge-cerrada"> CERRADA</span>' : ''}
+                                ${todasCerradas && tareaEstado !== 'CERRADA' ? '<span class="badge bg-warning text-dark"> Lista para cerrar</span>' : ''}
                                 <strong>${tareaNombre}</strong>
                                 <p class="text-muted mb-0 small">${tareaDesc}</p>
                                 <p class="mb-0 small"><strong>Progreso:</strong> ${cerradas}/${totalActividades} actividades completadas</p>
@@ -260,16 +260,16 @@ async function mostrarActividadesPorTarea() {
                     let estadoTexto = act.estado || 'Sin estado';
                     if (act.estado === 'asignada') {
                         estadoBadge = 'badge badge-asignada';
-                        estadoTexto = '⏸️ Asignada (no iniciada)';
+                        estadoTexto = ' Asignada (no iniciada)';
                     } else if (act.estado === 'en_desarrollo') {
                         estadoBadge = 'badge badge-en-desarrollo';
-                        estadoTexto = '⚙️ En Desarrollo';
+                        estadoTexto = ' En Desarrollo';
                     } else if (act.estado === 'finalizada') {
                         estadoBadge = 'badge badge-finalizada';
-                        estadoTexto = '✅ Finalizada (pendiente revisión)';
+                        estadoTexto = ' Finalizada (pendiente revisión)';
                     } else if (act.estado === 'cerrada') {
                         estadoBadge = 'badge badge-cerrada';
-                        estadoTexto = '🔒 Cerrada';
+                        estadoTexto = ' Cerrada';
                     }
                     
                     html += `<li class="mb-3 pb-2 border-bottom">
@@ -281,14 +281,14 @@ async function mostrarActividadesPorTarea() {
                                 <p class="mb-1 small text-muted">${act.descripcion || 'Sin descripción'}</p>
                                 <div class="row small">
                                     <div class="col-md-6">
-                                        <strong>👤 Empleado:</strong> ${act.empleado_id}<br>
-                                        <strong>⏱️ Tiempo estimado:</strong> ${act.tiempo_estimado} horas
+                                        <strong> Empleado:</strong> ${act.empleado_id}<br>
+                                        <strong> Tiempo estimado:</strong> ${act.tiempo_estimado} horas
                                     </div>
                                     <div class="col-md-6">
-                                        ${act.fecha_inicio ? `<strong>📅 Inicio:</strong> ${act.fecha_inicio}<br>` : ''}
-                                        ${act.fecha_finalizacion ? `<strong>🏁 Fin:</strong> ${act.fecha_finalizacion}<br>` : ''}
-                                        ${act.tiempo_real ? `<strong>⌛ Tiempo real:</strong> ${act.tiempo_real} horas<br>` : ''}
-                                        ${act.calificacion ? `<strong>⭐ Calificación:</strong> ${act.calificacion}/100` : ''}
+                                        ${act.fecha_inicio ? `<strong> Inicio:</strong> ${act.fecha_inicio}<br>` : ''}
+                                        ${act.fecha_finalizacion ? `<strong> Fin:</strong> ${act.fecha_finalizacion}<br>` : ''}
+                                        ${act.tiempo_real ? `<strong> Tiempo real:</strong> ${act.tiempo_real} horas<br>` : ''}
+                                        ${act.calificacion ? `<strong> Calificación:</strong> ${act.calificacion}/100` : ''}
                                     </div>
                                 </div>
                             </div>

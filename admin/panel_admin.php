@@ -58,7 +58,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_rol'] !== 'ADMIN') {
                     <label for=\"newPassword\" class=\"form-label\">Nueva contraseña</label>\n\
                     <input type=\"text\" class=\"form-control\" id=\"newPassword\" name=\"newPassword\" required>\n\
                 </div>\n\
-                <button type=\"submit\" class=\"btn btn-warning w-100\">Restablecer</button>\n\
+                <button type=\"submit\" class=\"btn btn-success w-100\">Restablecer</button>\n\
                 <div id=\"mensajeReset\" class=\"mt-3\"></div>\n\
             </form>\n\
         </div>\n\

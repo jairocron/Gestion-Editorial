@@ -20,15 +20,15 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_rol'] !== 'NORMAL') {
     
     
 </head>
-<body>
+<body class="empleado-dashboard">
     <div class="container-fluid">
         <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
-            <h1>Sistema de Gestión Editorial</h1>
+            <span style="color: white;"><h1>Sistema de Gestión Editorial</h1></span>
             <button class="btn btn-secondary" onclick="cerrarSesion()">Cerrar Sesión</button>
         </div>
     </div>
     <div class="seccion-empleado">
-        <h2>Panel Empleado</h2>
+        <span style="color: black;"><h2>Panel Empleado</h2></span>
         <button class="btn btn-secondary" onclick="verMisActividades()">Mis Actividades</button>
         <button class="btn btn-secondary" onclick="marcarCompletada()">Marcar como Completada</button>
         <button class="btn btn-secondary" onclick="verActividadesEnDesarrollo()">Actividades en Desarrollo</button>

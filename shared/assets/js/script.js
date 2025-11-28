@@ -66,11 +66,11 @@ function mostrarFormularioEmpleado() {
                 </select>
             </div>
             
-            <button type="button" onclick="guardarEmpleado()" class="btn btn-success">
+            <button type="button" onclick="guardarEmpleado()" class="btn btn-outline-secondary">
                 Guardar Empleado
             </button>
             
-            <button type="button" onclick="verEmpleados()" class="btn btn-secondary">
+            <button type="button" onclick="verEmpleados()" class="btn btn-outline-secondary">
                 Cancelar
             </button>
         </form>
@@ -116,7 +116,7 @@ function mostrarFormularioEmpleado() {
                             ${empleadosOptions}
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Guardar actividad</button>
+                    <button type="submit" class="btn btn-outline-secondary">Guardar actividad</button>
                 </form>
                 <div id="mensajeActividad"></div>
             `;
@@ -178,7 +178,7 @@ function mostrarFormularioActividades(id, nombre, descripcion, tiempo_estimado) 
                 <label>Email:</label><br>
                 <input type="email" id="emailEdicion" name="emailEdicion" value="${email}" required class="form-control">
             </div>
-            <button type="button" onclick="guardarEdicion(${id})" class="btn btn-success">
+            <button type="button" onclick="guardarEdicion(${id})" class="btn btn-secondary">
                 Guardar Cambios
             </button>
             <button type="button" onclick="verEmpleados()" class="btn btn-secondary">
@@ -278,7 +278,7 @@ async function mostrarActividadesPorTarea() {
                                 <span class="badge bg-info me-2">Actividad ID: ${act.id}</span>
                                 <span class="badge ${estadoBadge}">${estadoTexto}</span>
                                 <h6 class="mt-2 mb-1">${act.nombre}</h6>
-                                <p class="mb-1 small text-muted">${act.descripcion || 'Sin descripción'}</p>
+                 <p class="mb-1 small text-muted">${act.descripcion                || 'Sin descripción'}</p>
                                 <div class="row small">
                                     <div class="col-md-6">
                                         <strong> Empleado:</strong> ${act.empleado_id}<br>
@@ -293,10 +293,10 @@ async function mostrarActividadesPorTarea() {
                                 </div>
                             </div>
                             <div class="btn-group-vertical btn-group-sm ms-3">
-                                ${act.estado === 'finalizada' ? `<button class="btn btn-sm btn-success" onclick="evaluarActividad(${act.id})">Evaluar</button>` : ''}
-                                ${act.estado === 'cerrada' ? `<button class="btn btn-sm btn-info" onclick="clonarActividad(${act.id})">Clonar</button>` : ''}
-                                ${act.estado === 'asignada' ? `<button class="btn btn-sm btn-warning" onclick="editarActividad(${act.id}, 'mostrarActividadesPorTarea')">Editar</button>` : ''}
-                                <button class="btn btn-sm btn-danger" onclick="eliminarActividad(${act.id}, 'mostrarActividadesPorTarea')">Eliminar</button>
+                                ${act.estado === 'finalizada' ? `<button class="btn btn-sm btn-outline-success" onclick="evaluarActividad(${act.id})">Evaluar</button>` : ''}
+                                ${act.estado === 'cerrada' ? `<button class="btn btn-sm btn-outline-info" onclick="clonarActividad(${act.id})">Clonar</button>` : ''}
+                                ${act.estado === 'asignada' ? `<button class="btn btn-outline-secondary" onclick="editarActividad(${act.id}, 'mostrarActividadesPorTarea')">Editar</button>` : ''}
+                                <button class="btn btn-outline-secondary" onclick="eliminarActividad(${act.id}, 'mostrarActividadesPorTarea')">Eliminar</button>
                             </div>
                         </div>
                     </li>`;
@@ -508,7 +508,7 @@ function mostrarFormularioTarea() {
                     ${options}
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Guardar tarea</button>
+            <button type="submit" class="btn btn-outline-secondary">Guardar tarea</button>
             </form>
             <div id="mensajeTarea"></div>
         `;
@@ -572,9 +572,9 @@ function verEmpleados() {
                     : `https://ui-avatars.com/api/?name=${encodeURIComponent(emp.nombre)}+${encodeURIComponent(emp.apellido || '')}&background=random&size=64&bold=true`;
                 
                 const estadoBadge = emp.estado === 'activo' 
-                    ? '<span class="badge badge-sm bg-success">Activo</span>' 
+                    ? '<span class="badge badge-sm bg-secondary">Activo</span>' 
                     : emp.estado === 'pendiente'
-                    ? '<span class="badge badge-sm bg-warning">Pendiente</span>'
+                    ? '<span class="badge badge-sm bg-secondary">Pendiente</span>'
                     : '<span class="badge badge-sm bg-secondary">Inactivo</span>';
                 
                 const rolTexto = emp.rol === 'ADMIN' ? 'Administrador' : 'Empleado';
@@ -604,9 +604,9 @@ function verEmpleados() {
                             <span class="text-secondary text-xs font-weight-normal">${emp.email}</span>
                         </td>
                         <td class="align-middle">
-                                <button class="btn btn-sm btn-warning" onclick="editarEmpleado(${emp.id})">Editar</button>
+                                <button class="btn btn-sm btn-outline-secondary" onclick="editarEmpleado(${emp.id})">Editar</button>
                             </a>
-                             <button class="btn btn-sm btn-danger" onclick="eliminarEmpleado(${emp.id})">Eliminar</button>
+                             <button class="btn btn-sm btn-outline-secondary" onclick="eliminarEmpleado(${emp.id})">Eliminar</button>
                             </a>
                         </td>
                     </tr>`;
@@ -646,7 +646,7 @@ function editarEmpleado(id) {
                         <img id="preview-foto" src="${avatarUrl}" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;" alt="Foto de perfil">
                         <div>
                             <input type="file" id="input-foto" class="form-control mb-2" accept="image/*">
-                            <button type="button" class="btn btn-sm btn-primary" onclick="subirFotoPerfil(${id})">📷 Subir Foto</button>
+                            <button type="button" class="btn btn-sm btn-secondary" onclick="subirFotoPerfil(${id})"> Subir Foto</button>
                             <div id="msg-foto" class="mt-2"></div>
                         </div>
                     </div>
@@ -680,8 +680,8 @@ function editarEmpleado(id) {
                             <option value='inactivo' ${emp.estado=='inactivo'?'selected':''}>Inactivo</option>
                         </select>
                     </div>
-                    <button type='submit' class='btn btn-success'>💾 Guardar Cambios</button>
-                    <button type='button' onclick='verEmpleados()' class='btn btn-secondary'>❌ Cancelar</button>
+                    <button type='submit' class='btn btn-outline-success'> Guardar Cambios</button>
+                    <button type='button' onclick='verEmpleados()' class='btn btn-outline-secondary'> Cancelar</button>
                 </form>`;
                 
             // Preview de imagen al seleccionar
